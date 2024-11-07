@@ -24,6 +24,12 @@ const getContact = (req,res)=>{
 //@route PUT /api/contacts/:id
 //@access public
 const updateContact = (req,res)=>{
+    console.log("the request body is: ",req.body);
+    const {name,email,phone} = req.body;
+    if (!name || !email || !phone) {
+        res.status(400);
+        throw new Error("All fields are mandatory");
+    }
     res.status(200).json({message:`Updated contact for ${req.params.id}`});
 }
 
