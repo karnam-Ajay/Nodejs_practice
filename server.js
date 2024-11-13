@@ -11,6 +11,7 @@ app.use(errorHandler)   // whenever we have to import middle ware we need have t
 const port = process.env.PORT || 5000;
 
 app.use('/api/contacts',require("./routes/contactRoutes"));  // here use() method acts as middleware
+app.use('/api/users',require("./routes/userRoutes"));
 
 app.listen(port,()=>{
     console.log(`app is running on ${port}`);
